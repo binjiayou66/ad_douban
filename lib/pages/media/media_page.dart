@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ad_douban/util/widget_decoration.dart';
 
 class MediaPage extends StatefulWidget {
   _MediaPageState createState() => _MediaPageState();
@@ -7,10 +8,8 @@ class MediaPage extends StatefulWidget {
 class _MediaPageState extends State<MediaPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text("Hello Media."),
-      ),
-    );;
+    return WidgetDecoration(Text("Hello Media."))
+        .align(alignment: FractionalOffset.center)
+        .build();
   }
 }

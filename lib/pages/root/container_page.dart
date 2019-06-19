@@ -35,23 +35,16 @@ class _ContainerPageState extends State<ContainerPage> {
     super.initState();
 
     if (pages == null) {
-      pages = [
-        HomePage(),
-        MediaPage(),
-        GroupPage(),
-        ShopPage(),
-        MinePage()
-      ];
+      pages = [HomePage(), MediaPage(), GroupPage(), ShopPage(), MinePage()];
     }
     if (itemList == null) {
-      itemList = items.map(
-          (item) => BottomNavigationBarItem(
+      itemList = items
+          .map((item) => BottomNavigationBarItem(
               icon: Image.asset(item.normalIcon, width: 30.0, height: 30.0),
               title: Text(item.name, style: TextStyle(fontSize: 10.0)),
               activeIcon:
-                  Image.asset(item.activeIcon, width: 30.0, height: 30.0)
-        )
-      ).toList();
+                  Image.asset(item.activeIcon, width: 30.0, height: 30.0)))
+          .toList();
     }
   }
 
