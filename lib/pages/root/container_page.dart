@@ -4,6 +4,7 @@ import 'package:ad_douban/pages/media/media_page.dart';
 import 'package:ad_douban/pages/group/group_page.dart';
 import 'package:ad_douban/pages/shop/shop_page.dart';
 import 'package:ad_douban/pages/mine/mine_page.dart';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class ContainerPage extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class _ContainerPageState extends State<ContainerPage> {
   int _selectedIndex = 0;
   List<Widget> pages;
   List<BottomNavigationBarItem> itemList;
+  FlutterWebviewPlugin webviewPlugin = FlutterWebviewPlugin();
 
   final defualtItemColor = Color.fromARGB(255, 125, 125, 125);
 
@@ -64,6 +66,11 @@ class _ContainerPageState extends State<ContainerPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: itemList,
         onTap: (int index) {
+          if (index == 3) {
+            webviewPlugin.show();
+          } else {
+            webviewPlugin.hide();
+          }
           setState(() {
             _selectedIndex = index;
           });
